@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الحريري ماركت</title>
+<meta name="description" content="خيارات يومية بروح المحبة">
+<meta name="theme-color" content="#381E07">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_LY">
+<meta property="og:title" content="الحريري ماركت">
+<meta property="og:description" content="خيارات يومية بروح المحبة">
+
+
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+/* food-warm: roasted-brown ground, amber accent, arch-shaped hero, centred ornamental headings,
+   photography first (gallery high, first photo is the feature), the menu link is the loudest control.
+   Body: Cairo 400/600. Name + headings: Lalezar 400. */
+:root{
+  --bg:#381E07;--panel:#4C2909;--accent:#fd8a1f;--accent-soft:#5B310B;--accent-rgb:253,138,31;
+  --accent2:#fd8a1f;--accent2-rgb:253,138,31;
+  --text:#FFF6ED;--soft:#D3C6BA;--muted:#AFA091;--line:#58412C;--hover:#502B0A;
+  --on-accent:#111111;--fab-icon:#111111;--r:16px;
+  --ground:#201104;--shade-rgb:0,0,0;
+  --font:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,Roboto,sans-serif;
+  --font-display:"Lalezar","Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+[hidden]{display:none!important}
+body{margin:0;padding:22px 16px 108px;color:var(--text);font:400 16px/1.8 var(--font);overflow-wrap:break-word;
+  background:radial-gradient(90% 38% at 50% 0%,rgba(var(--accent-rgb),.14),transparent 72%),var(--bg)}
+.wrap{max-width:440px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.ico{width:24px;height:24px;flex:0 0 24px}
+
+/* ---- hero: an arch (a doorway / a tandoor) ---- */
+.hero{margin:0 0 20px}
+.frame{padding:6px;border:1.5px solid var(--accent);border-radius:220px 220px 22px 22px}
+.frame-in{padding:46px 18px 26px;text-align:center;background:var(--panel);border-radius:214px 214px 17px 17px}
+.mark{margin:0 auto 18px}
+.mark--logo{width:100%;max-width:240px;aspect-ratio:16/9}
+.mark--logo img{display:block;width:100%;height:100%;object-fit:contain}
+/* logo plate: an arch-top plate (the hero frame's own doorway shape), filled with the logo's own flat colour */
+.mark--logo.plate{box-sizing:border-box;padding:18px 22px 14px;border-radius:120px 120px 16px 16px;box-shadow:0 12px 26px -10px rgba(var(--shade-rgb),.4)}
+.mark--logo.plate.plate--ring{box-shadow:0 0 0 1.5px var(--accent),0 12px 26px -10px rgba(var(--shade-rgb),.4)}
+/* logo inside a photo/mockup: a round framed card, like a profile photo, never stretched */
+.mark--logo.mark--logo-photo{width:100px;max-width:100px;aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--accent-soft);
+  outline:1.5px dashed rgba(var(--accent-rgb),.65);outline-offset:6px}
+.mark--logo.mark--logo-photo img{object-fit:cover}
+.mark--mono,.mark--icon{width:100px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);
+  outline:1.5px dashed rgba(var(--accent-rgb),.65);outline-offset:6px}
+.mono{font-size:54px;font-weight:600;line-height:1.8}
+.mark--icon .ico{width:48px;height:48px}
+.name{margin:0;font:400 32px/1.8 var(--font-display);color:var(--accent2)}
+.name-en{margin:0;font-size:14px;font-weight:600;line-height:1.6;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.tag{margin:0 6px 26px;text-align:center}
+.tagline{margin:0;font-size:17px;color:var(--soft)}
+.tagline-en{margin:0;font-size:14px;line-height:1.6;letter-spacing:.08em;color:var(--muted)}
+
+/* ---- headings: centred, flanked by rules ---- */
+.sec{margin:0 0 32px}
+.head{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 16px;font:400 25px/1.8 var(--font-display);color:var(--accent2);text-align:center}
+.head::before,.head::after{content:"";flex:1;height:1px;background:var(--line)}
+.num{display:none}
+.label{margin:0 4px 10px;font-size:15px;font-weight:600;color:var(--muted)}
+.lead{margin:0 0 12px;font-size:16px;color:var(--soft)}
+
+/* ---- gallery: photography first; the first photo is the feature ---- */
+.gal{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gal-i{aspect-ratio:1;overflow:hidden;background:var(--accent-soft);border-radius:16px}
+.gal-i:first-child{grid-column:1/-1;aspect-ratio:4/3;border-radius:22px}
+.gal-i:last-child:nth-child(even){grid-column:1/-1;aspect-ratio:16/9}
+.gal-i img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ---- dishes / services ---- */
+.svc{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.svc-i{padding:12px 18px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.svc-t{margin:0;font-size:17px;font-weight:600;line-height:1.8;color:var(--text)}
+.svc-d{margin:0;font-size:15px;color:var(--soft)}
+
+.panels{display:grid;gap:10px}
+.panel{padding:16px 18px;background:var(--panel);border:1px dashed var(--line);border-radius:16px}
+.panel-h{display:flex;align-items:center;gap:10px;margin:0 0 2px;font:400 19px/1.8 var(--font-display);color:var(--accent2)}
+.panel-p{margin:0;font-size:15px;color:var(--soft)}
+
+.hours{margin:0;padding:4px 18px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.hr{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 16px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.hr:last-child{border-bottom:0}
+.hr-d{margin:0;font-size:16px;font-weight:600}
+.hr-t{margin:0;margin-inline-start:auto;font-size:16px;color:var(--accent);font-weight:600}
+
+/* ---- link rows ---- */
+.stack{display:grid;gap:8px}
+.row{display:flex;align-items:center;gap:14px;min-height:60px;padding:10px 18px;background:var(--panel);border:1px solid var(--line);border-radius:16px;color:var(--text);text-decoration:none}
+.row .ico{color:var(--accent)}
+.row-t{flex:1;min-width:0}
+.row-l{display:block;font-size:16px;font-weight:600;line-height:1.8}
+.row-s{display:block;font-size:14px;line-height:1.8;color:var(--muted);overflow-wrap:anywhere}
+.row-s:empty{display:none}
+.chev{width:20px;height:20px;flex:0 0 20px;color:var(--muted)}
+[dir="rtl"] .chev{transform:scaleX(-1)}
+.row:hover{background:var(--hover);border-color:var(--accent)}
+.save{display:flex;align-items:center;justify-content:center;width:100%;min-height:56px;margin-top:10px;padding:8px 16px;border:1.5px solid var(--accent);border-radius:16px;
+  background:transparent;color:var(--accent);font:600 16px/1.8 var(--font);cursor:pointer}
+
+.sec--en{padding-top:28px;border-top:1px dashed var(--line);line-height:1.6}
+.sec--en .sub{margin:0 0 28px}
+.sec--en .lead{line-height:1.7}
+.sec--en .svc-t,.sec--en .svc-d{line-height:1.6}
+
+.foot{margin-top:38px;padding-top:16px;border-top:1px dashed var(--line);text-align:center}
+.foot-t{margin:0;font-size:14px;color:var(--muted)}
+.sig{margin:0;font-size:14px;color:var(--muted)}
+.sig-a{display:inline-flex;align-items:center;min-height:48px;padding:0 8px;color:var(--accent);font-weight:600}
+.fab-wrap{position:fixed;left:0;right:0;bottom:0;max-width:440px;margin:0 auto;padding:0 16px calc(16px + env(safe-area-inset-bottom,0px));
+  display:flex;justify-content:flex-end;pointer-events:none}
+.fab{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--accent);color:var(--fab-icon);
+  box-shadow:0 8px 22px rgba(var(--shade-rgb),.4);pointer-events:auto}
+.fab .ico{width:29px;height:29px}
+.px{display:block;width:1px;height:1px}
+
+/* ---- inner-page buttons: one prominent tile per page (max 3). 1 = full width, 2 = two columns, 3 = a row of three from 400px, else 2 + 1 ---- */
+.pages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pages--1{grid-template-columns:minmax(0,1fr)}
+.pages--3 .pg-li:last-child{grid-column:1/-1}
+@media (min-width:400px){.pages--3{grid-template-columns:repeat(3,minmax(0,1fr))}.pages--3 .pg-li:last-child{grid-column:auto}}
+.pg-li{display:flex}
+.pg{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:104px;padding:12px 8px;text-align:center;text-decoration:none;overflow-wrap:anywhere}
+.pg .ico{width:30px;height:30px;flex:0 0 30px;margin-bottom:2px}
+.pg-l{font-size:16px;font-weight:600;line-height:1.8}
+.pg-s{font-size:13px;line-height:1.8}
+.pg-s:empty{display:none}
+.pg{background:var(--accent);color:var(--on-accent);border-radius:18px;box-shadow:0 10px 26px -10px rgba(var(--accent-rgb),.55)}
+.pg:hover{box-shadow:0 0 0 4px rgba(var(--accent-rgb),.3)}
+
+@keyframes up{from{opacity:0;transform:translateY(8px)}}
+@media (prefers-reduced-motion:no-preference){
+  .hero,.tag,.sec{animation:up .5s ease-out both}
+  .row{transition:background-color .18s ease,border-color .18s ease}
+}
+@media (min-width:600px){body{padding-top:40px}}
+/* large screens: the column becomes a warm card in a glow on a deeper ground; inner layout untouched */
+@media (min-width:900px){
+  body{padding:56px 16px;background:radial-gradient(70% 60% at 50% 0%,rgba(var(--accent-rgb),.22),transparent 72%),var(--ground)}
+  .wrap{max-width:488px;padding:32px 24px 96px;border:1px solid var(--line);border-radius:32px;
+    background:radial-gradient(90% 30% at 50% 0%,rgba(var(--accent-rgb),.14),transparent 72%),var(--bg);
+    box-shadow:0 0 60px -10px rgba(var(--accent-rgb),.25),0 40px 90px -30px rgba(var(--shade-rgb),.55)}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+  <div class="frame"><div class="frame-in">
+    <div class="mark mark--logo"><img src="logo.png" width="320" height="180" alt="" decoding="async"></div>
+    <h1 class="name">الحريري ماركت</h1>
+    
+  </div></div>
+</header>
+<div class="tag"><p class="tagline">خيارات يومية بروح المحبة</p></div>
+
+<section class="sec sec--gallery" aria-labelledby="h-gallery">
+  <h2 class="head" id="h-gallery"><span class="num" aria-hidden="true"></span><span class="head-t">معرض الصور</span></h2>
+  <ul class="gal"><li class="gal-i"><img src="g1.jpg" width="400" height="300" loading="lazy" decoding="async" alt="صورة 1 - الحريري ماركت"></li><li class="gal-i"><img src="g2.jpg" width="400" height="300" loading="lazy" decoding="async" alt="صورة 2 - الحريري ماركت"></li><li class="gal-i"><img src="g3.jpg" width="400" height="300" loading="lazy" decoding="async" alt="صورة 3 - الحريري ماركت"></li><li class="gal-i"><img src="g4.jpg" width="400" height="300" loading="lazy" decoding="async" alt="صورة 4 - الحريري ماركت"></li><li class="gal-i"><img src="g5.jpg" width="400" height="300" loading="lazy" decoding="async" alt="صورة 5 - الحريري ماركت"></li><li class="gal-i"><img src="g6.jpg" width="400" height="300" loading="lazy" decoding="async" alt="صورة 6 - الحريري ماركت"></li></ul>
+</section>
+<section class="sec sec--about" aria-labelledby="h-about">
+  <h2 class="head" id="h-about"><span class="num" aria-hidden="true"></span><span class="head-t">من نحن</span></h2>
+  <p class="lead">الحريري ماركت في البيضاء، ليبيا، سوبرماركت يوفر تشكيلة متنوعة من المواد الغذائية والشيبس والشوكولاتة لتناسب مختلف الأذواق. كما يقدم منتجات مختارة للكيتو دايت وأصدقاء الحساسية، إلى جانب مستلزمات تجهيز الحلويات والهدايا، لتجدوا احتياجاتكم اليومية وخيارات مناسبة لمناسباتكم بروح «تهادوا تحابوا».</p>
+</section>
+<section class="sec sec--services" aria-labelledby="h-services">
+  <h2 class="head" id="h-services"><span class="num" aria-hidden="true"></span><span class="head-t">خدماتنا</span></h2>
+  <ul class="svc"><li class="svc-i"><h3 class="svc-t">مواد غذائية</h3><p class="svc-d">تشكيلة متنوعة من المواد الغذائية للاحتياجات اليومية.</p></li><li class="svc-i"><h3 class="svc-t">شيبس وشوكولاتة</h3><p class="svc-d">خيارات متنوعة تناسب مختلف الأذواق والرغبات.</p></li><li class="svc-i"><h3 class="svc-t">منتجات الكيتو</h3><p class="svc-d">منتجات مختارة تناسب نظام الكيتو دايت الغذائي.</p></li><li class="svc-i"><h3 class="svc-t">منتجات الحساسية</h3><p class="svc-d">خيارات مناسبة لأصدقاء الحساسية واحتياجاتهم الغذائية.</p></li><li class="svc-i"><h3 class="svc-t">مستلزمات الحلويات</h3><p class="svc-d">مستلزمات متنوعة لتجهيز الحلويات في المنزل.</p></li><li class="svc-i"><h3 class="svc-t">تجهيز الهدايا</h3><p class="svc-d">خيارات ومستلزمات مناسبة لتجهيز الهدايا والمناسبات.</p></li></ul>
+</section>
+
+
+
+<section class="sec sec--social" aria-labelledby="h-social">
+  <h2 class="label" id="h-social">تابعنا</h2>
+  <div class="stack"><a class="row" href="https://www.facebook.com/ahmadmekiel" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="3.5"/><path d="M13.5 20.8v-7h2.3l.4-2.7h-2.7V9.4c0-.8.3-1.3 1.4-1.3h1.4V5.7c-.3 0-1.1-.1-2-.1-2 0-3.3 1.2-3.3 3.4v2.1H8.8v2.7H11v7"/></svg><span class="row-t"><span class="row-l">فيسبوك</span><span class="row-s"><span dir="ltr">facebook.com/ahmadmekiel</span></span></span><svg class="ico chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5.5 15.5 12 9 18.5"/></svg></a><a class="row" href="https://www.instagram.com/alharere_market2026/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><path d="M17.1 6.9v.01"/></svg><span class="row-t"><span class="row-l">إنستغرام</span><span class="row-s"><span dir="ltr">instagram.com/alharere_market2026</span></span></span><svg class="ico chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5.5 15.5 12 9 18.5"/></svg></a><a class="row" href="https://www.tiktok.com/@alharere_market" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.2 3.5v10.3a3.4 3.4 0 1 1-3.4-3.4"/><path d="M14.2 3.5c.3 2.4 1.9 4 4.6 4.3"/></svg><span class="row-t"><span class="row-l">تيك توك</span><span class="row-s"><span dir="ltr">tiktok.com/@alharere_market</span></span></span><svg class="ico chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5.5 15.5 12 9 18.5"/></svg></a></div>
+</section>
+<section class="sec sec--contact" aria-labelledby="h-contact">
+  <h2 class="label" id="h-contact">تواصل معنا</h2>
+  <div class="stack"><a class="row" href="https://wa.me/218944444672"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 20.5l1.3-4.2A8.4 8.4 0 1 1 8 19.4l-4.5 1.1z"/><path d="M9 9.4c.2 1.6 2 3.4 3.6 3.6.5.1 1-.1 1.3-.5l.4-.5 1.6 1-.4.7c-.5.8-1.5 1-2.4.7A8 8 0 0 1 8 9.5c-.3-.9 0-1.9.8-2.4l.7-.4 1 1.6-.5.4c-.4.3-.6.7-.5 1.2"/></svg><span class="row-t"><span class="row-l">واتساب</span><span class="row-s"><span dir="ltr">+218 94 444 4672</span></span></span><svg class="ico chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5.5 15.5 12 9 18.5"/></svg></a><a class="row" href="tel:+218944444672"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><span class="row-t"><span class="row-l">اتصل بنا</span><span class="row-s"><span dir="ltr">+218 94 444 4672</span></span></span><svg class="ico chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5.5 15.5 12 9 18.5"/></svg></a><a class="row" href="https://www.google.com/maps/search/?api=1&amp;query=%D8%A7%D9%84%D8%A8%D9%8A%D8%B6%D8%A7%D8%A1%20-%20%D9%84%D9%8A%D8%A8%D9%8A%D8%A7" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21.5s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10.5" r="2.6"/></svg><span class="row-t"><span class="row-l">موقعنا</span><span class="row-s">البيضاء - ليبيا</span></span><svg class="ico chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5.5 15.5 12 9 18.5"/></svg></a></div>
+  <button type="button" class="save" id="vcf" hidden data-file="alharere.vcf" data-vcard="BEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AN%3A%D8%A7%D9%84%D8%AD%D8%B1%D9%8A%D8%B1%D9%8A%20%D9%85%D8%A7%D8%B1%D9%83%D8%AA%3B%3B%3B%3B%0D%0AFN%3A%D8%A7%D9%84%D8%AD%D8%B1%D9%8A%D8%B1%D9%8A%20%D9%85%D8%A7%D8%B1%D9%83%D8%AA%0D%0AORG%3A%D8%A7%D9%84%D8%AD%D8%B1%D9%8A%D8%B1%D9%8A%20%D9%85%D8%A7%D8%B1%D9%83%D8%AA%0D%0AX-ABShowAs%3ACOMPANY%0D%0ATITLE%3A%D8%AE%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA%20%D9%8A%D9%88%D9%85%D9%8A%D8%A9%20%D8%A8%D8%B1%D9%88%D8%AD%20%D8%A7%D9%84%D9%85%D8%AD%D8%A8%D8%A9%0D%0ATEL%3BTYPE%3DWORK%2CVOICE%3A%2B218944444672%0D%0AADR%3BTYPE%3DWORK%3A%3B%3B%D8%A7%D9%84%D8%A8%D9%8A%D8%B6%D8%A7%D8%A1%20-%20%D9%84%D9%8A%D8%A8%D9%8A%D8%A7%3B%3B%3B%3B%0D%0AEND%3AVCARD%0D%0A">حفظ جهة الاتصال</button>
+</section>
+<footer class="foot">
+  <p class="foot-t">© 2026 الحريري ماركت</p>
+  <p class="sig">تصميم <a class="sig-a" href="https://t.me/ShibuyaLY_bot" target="_blank" rel="noopener"><span lang="en" dir="ltr">شيبويا للجرافيك</span></a></p>
+</footer>
+</main>
+<div class="fab-wrap"><a class="fab" href="https://wa.me/218944444672" aria-label="تواصل معنا عبر واتساب"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 20.5l1.3-4.2A8.4 8.4 0 1 1 8 19.4l-4.5 1.1z"/><path d="M9 9.4c.2 1.6 2 3.4 3.6 3.6.5.1 1-.1 1.3-.5l.4-.5 1.6 1-.4.7c-.5.8-1.5 1-2.4.7A8 8 0 0 1 8 9.5c-.3-.9 0-1.9.8-2.4l.7-.4 1 1.6-.5.4c-.4.3-.6.7-.5 1.2"/></svg></a></div>
+
+<script>
+(function(){var b=document.getElementById("vcf");if(!b||!window.Blob||!window.URL||!URL.createObjectURL)return;b.hidden=false;b.onclick=function(){var v=new Blob([decodeURIComponent(b.getAttribute("data-vcard"))],{type:"text/vcard;charset=utf-8"}),u=URL.createObjectURL(v),a=document.createElement("a");a.href=u;a.download=b.getAttribute("data-file");document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(u)},1000)}})();
+</script>
+
+</body>
+</html>
